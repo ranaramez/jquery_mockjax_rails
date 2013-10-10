@@ -13,7 +13,7 @@ class JqueryMockjaxMiddleware
     def append_mockjaxes response
       if response.is_a? ActionDispatch::Response
         response.body = response.body.gsub!(
-          /(<\/head>)/,
+          /(<\/body>)/,
           %Q{
             <script src='#{JqueryMockjaxRails.js_path}' type='text/javascript'></script>
             <script type='text/javascript'>#{JqueryMockjaxRails.js_output}</script>\\1
